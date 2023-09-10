@@ -1,18 +1,16 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 记录生活记录你.
+keywords: Shui Wu,
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+天生我材必有用
 
-仰慕「优雅编码的艺术」。
-
-坚信熟能生巧，努力改变人生。
+千金散尽还复来
 
 ## 联系
 
