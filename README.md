@@ -19,7 +19,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 1. 正确设置项目名称与分支。
 
-   按照 GitHub Pages 的规定，名称为 `username.github.io` 的项目的 master 分支，或者其它名称的项目的 gh-pages 分支可以自动生成 GitHub Pages 页面。
+   按照 GitHub Pages 的规定，名称为 `username.github.io` 的项目的 main 分支，或者其它名称的项目的 gh-pages 分支可以自动生成 GitHub Pages 页面。
 
 2. 修改域名。
 
@@ -51,6 +51,6 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 ## 使用文档
 
-- [本博客模板常见问题 Q & A]
+- [本博客模板常见问题 Q & A](https://mazhuang.org/2020/05/03/blog-template-qna/)。
 
 - 在本地预览博客效果可以参考 [Setting up your Pages site locally with Jekyll][2]。
