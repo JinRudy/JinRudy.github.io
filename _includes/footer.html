@@ -1,0 +1,13 @@
+    <footer class="site-footer">
+      <div class="wrap inner">
+        <a class="brand" href="/"><span class="drop"></span>{{ site.title }}</a>
+        <div class="flinks">
+          {% for nav in site.navs %}<a href="{{ nav.href }}">{{ nav.label }}</a>{% endfor %}
+          <a href="{{ site.subscribe_rss }}">RSS</a>
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div>© {{ site.since }}–{{ site.time | date: '%Y' }} {{ site.author }} · {{ site.subtitle }}</div>
+      </div>
+    </footer>
+</body>
+</html>

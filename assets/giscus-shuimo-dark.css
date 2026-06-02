@@ -1,0 +1,50 @@
+/* giscus 自定义主题 · 雾水水墨（夜墨） */
+main {
+  --color-canvas-default: #161e23;
+  --color-canvas-overlay: #1a232a;
+  --color-canvas-inset: #0e1316;
+  --color-canvas-subtle: #131a1f;
+  --color-fg-default: #e7ebee;
+  --color-fg-muted: #94a0a8;
+  --color-fg-subtle: #6b757d;
+  --color-border-default: rgba(255,255,255,.10);
+  --color-border-muted: rgba(255,255,255,.07);
+  --color-neutral-muted: rgba(111,184,171,.12);
+  --color-accent-fg: #6fb8ab;
+  --color-accent-emphasis: #6fb8ab;
+  --color-accent-muted: rgba(111,184,171,.40);
+  --color-accent-subtle: rgba(111,184,171,.12);
+  --color-success-fg: #6fb8ab;
+  --color-danger-fg: #e06a5a;
+  --color-btn-text: #e7ebee;
+  --color-btn-bg: #1a232a;
+  --color-btn-border: rgba(255,255,255,.12);
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-hover-bg: #202b33;
+  --color-btn-hover-border: rgba(255,255,255,.18);
+  --color-btn-active-bg: #243038;
+  --color-btn-active-border: rgba(255,255,255,.18);
+  --color-btn-selected-bg: #202b33;
+  --color-btn-primary-text: #0e1316;
+  --color-btn-primary-bg: #6fb8ab;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #8fcabf;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-selected-bg: #8fcabf;
+  --color-btn-primary-disabled-text: rgba(14,19,22,.7);
+  --color-btn-primary-disabled-bg: #3f6a63;
+  --color-action-list-item-default-hover-bg: rgba(111,184,171,.10);
+  --color-segmented-control-bg: #0e1316;
+  --color-segmented-control-button-bg: #161e23;
+  --color-social-reaction-bg-hover: rgba(111,184,171,.12);
+  --color-social-reaction-bg-reacted-hover: rgba(111,184,171,.22);
+  color-scheme: dark;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+.gsc-comment-box { border-radius: 14px; }
+.gsc-comment-box-tabs { border-radius: 14px 14px 0 0; }
+.gsc-comment-box-textarea { border-radius: 10px; }
+.gsc-comment .gsc-comment-content,
+.gsc-comment > .gsc-comment-box { border-radius: 14px; }
+.gsc-reactions-count { display: none; }

@@ -1,0 +1,60 @@
+- name: 码志
+  url: https://mazhuang.org
+  avatar: https://github.com/mzlogin.png
+  desc: mzlogin 的博客
+- name: 辣椒の酱
+  url: https://removeif.github.io/
+  avatar: https://github.com/removeif.png
+  desc: 辣椒の酱的博客
+- name: 宇宙湾
+  url: https://yuzhouwan.com/
+  avatar: https://github.com/asdf2014.png
+  desc: 大数据与技术分享
+- name: 荷戟独彷徨
+  url: https://guanqr.com/
+  avatar: https://cdn.jsdelivr.net/gh/guanqr/blog/static/icons/android-chrome-512x512.png
+  desc: 爱光学，爱生活，爱创造
+- name: 茂茂物语
+  url: https://notes.fe-mm.com
+  avatar: https://notes.fe-mm.com/logo.png
+  desc: 前端知识 · 源码笔记 · 提效工具
+- name: yihong0618
+  url: https://yihong.run/
+  avatar: https://github.com/yihong0618.png
+  desc: 热爱开源的折腾者
+- name: wallleap
+  url: https://myblog.wallleap.cn
+  avatar: https://github.com/wallleap.png
+  desc: Luwang's blog
+- name: XingHuiSama
+  url: https://www.xinghuisama.top/
+  avatar: https://github.com/heiehiehi.png
+  desc: 赛博空间里的有趣灵魂
+- name: Gens Note
+  url: https://gens.cn/
+  avatar: https://github.com/hellojuantu.png
+  desc: 卷土的笔记
+- name: 淼淼之森
+  url: https://www.mmzsblog.cn/
+  avatar: https://github.com/mmzsblog.png
+  desc: 程序员阿淼 · Java 学习路上的点滴
+- name: 文科中的技术宅
+  url: https://townwang.com/
+  avatar: https://github.com/Townwang.png
+  desc: 文出身却爱技术 · 开源与好软件分享
+- name: 极客兔兔
+  url: https://geektutu.com/
+  avatar: https://github.com/geektutu.png
+  desc: 7 天系列教程 · 有趣的开源项目
+- name: Meekdai
+  url: https://blog.meekdai.com/
+  avatar: https://github.com/Meekdai.png
+  desc: Meekdai 的折腾日志
+- name: HelloWorld 的小博客
+  url: https://mzdluo123.github.io/
+  avatar: https://github.com/mzdluo123.png
+  desc: mzdluo123 的小博客
+- name: SFLOG
+  url: https://github.com/platojobs/SFLOG
+  avatar: https://github.com/platojobs.png
+  desc: platojobs · 读书笔记与日常思考

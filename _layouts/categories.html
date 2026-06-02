@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<header class="page-head wrap">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<div class="subtitle">{{ page.description }}</div>{% endif %}
+</header>
+
+<div class="wrap">
+  <div class="page-body">
+    {{ content }}
+
+    {% assign sorted_categories = site.categories | sort %}
+    {% if site.categories.size > 0 %}
+    <div class="cate-filter" id="cate-filter">
+      <button class="cate-chip active" type="button" data-cate="__all" data-ripple>全部 <span class="n">{{ site.posts.size }}</span></button>
+      {% for category in sorted_categories %}
+      <button class="cate-chip" type="button" data-cate="{{ category[0] }}" data-ripple>{{ category[0] }} <span class="n">{{ category[1].size }}</span></button>
+      {% endfor %}
+    </div>
+
+    {% for category in sorted_categories %}
+    <div class="cate-block" data-cate="{{ category[0] }}">
+      <h3 class="cate-name" id="{{ category[0] }}">{{ category[0] }} <span class="count">{{ category[1].size }} 篇</span></h3>
+      <ol class="cate-list">
+        {% for post in category[1] %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a><span class="d">{{ post.date | date:"%Y-%m-%d" }}</span></li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="color:var(--text-soft)">还没有分类，写第一篇带分类的文章吧。</p>
+    {% endif %}
+  </div>
+</div>

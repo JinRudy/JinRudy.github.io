@@ -1,0 +1,46 @@
+---
+layout: default
+class: home
+menu: 首页
+comments: false
+---
+
+<section class="hero wrap">
+  <div class="eyebrow">{{ site.title }} · WU SHUI</div>
+  <h1>
+    <span class="ln"><span>记录技术与生活的</span></span>
+    <span class="ln"><span>每一<span class="accent-ink">滴</span>水花</span></span>
+  </h1>
+  <p class="sub">像雾，像雨，又像风。这里写代码、写电影、写一些半夜想通的小事 —— 慢慢沉淀，等你来读。</p>
+  <div class="meta">
+    <span>📍 {{ site.location }}</span>
+    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">@{{ site.github_username }}</a>
+    <span>✉ {{ site.email }}</span>
+  </div>
+</section>
+
+<section class="posts wrap">
+  <div class="sec-head" data-reveal>
+    <div>
+      <h2 class="sec-title">最新文章</h2>
+      <p class="sec-sub">慢慢长大中</p>
+    </div>
+    <a class="more-link" href="/archives/" data-ripple>浏览全部 →</a>
+  </div>
+
+  <ol class="card-grid">
+    {% for post in site.posts limit: 3 %}
+    <li>
+      <a class="card" href="{{ post.url }}" data-reveal data-ripple>
+        {% if post.cover %}<div class="card-media"><img src="{{ post.cover }}" alt="{{ post.title }}" loading="lazy"></div>{% endif %}
+        <div class="card-body">
+          <span class="tag{% if post.topmost %} top{% endif %}">{% if post.topmost %}置顶{% elsif post.categories.size > 0 %}{{ post.categories.first }}{% else %}随笔{% endif %}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | strip | truncate: 80 }}</p>
+          <div class="meta">{{ post.date | date: "%Y/%m/%d" }}<span class="dot"></span>约 {{ post.content | strip_html | strip_newlines | remove: " " | size | divided_by: 400 | plus: 1 }} 分钟</div>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>

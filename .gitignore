@@ -1,0 +1,10 @@
+# Jekyll 构建产物与缓存
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# 依赖
+.bundle/
+vendor/bundle/
+*.gem

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<header class="page-head wrap">
+  <h1>{{ page.title }}</h1>
+  {% if page.subtitle %}<div class="subtitle">{{ page.subtitle }}</div>{% endif %}
+</header>
+
+<div class="wrap">
+  <div class="page-body">
+    {{ content }}
+    <div class="timeline">
+      {% assign last_year = '' %}
+      {% for post in site.posts %}
+        {% capture y %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% if y != last_year %}
+          {% unless forloop.first %}</div></div>{% endunless %}
+          <div class="tl-group"><div class="tl-year">{{ y }}</div><div class="tl-items">
+          {% assign last_year = y %}
+        {% endif %}
+        <a class="tl-item" href="{{ post.url }}" data-ripple>
+          <span class="tl-date">{{ post.date | date: '%m / %d' }}</span>
+          <span class="tl-title">{{ post.title }}</span>
+          {% if post.categories.size > 0 %}<span class="tl-cat">{{ post.categories.first }}</span>{% endif %}
+        </a>
+      {% endfor %}
+      {% if site.posts.size > 0 %}</div></div>{% endif %}
+    </div>
+    {% if site.posts.size == 0 %}<p style="color:var(--text-soft)">还没有文章。</p>{% endif %}
+  </div>
+</div>

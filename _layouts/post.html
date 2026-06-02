@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% assign assets_base_url = site.url %}
+{% if site.cdn.jsdelivr.enabled %}
+{% assign assets_base_url = "https://fastly.jsdelivr.net/gh/" | append: site.repository | append: '@main' %}
+{% endif %}
+{% assign wc = page.content | strip_html | strip_newlines | remove: " " | size %}
+
+<article>
+  <header class="post-head wrap">
+    {% if page.categories.size > 0 %}<span class="tag">{{ page.categories.first }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <span>{{ page.date | date: "%Y 年 %m 月 %d 日" }}</span>
+      {% if site.components.word_count.enabled %}<span>约 {{ wc }} 字 · {{ wc | divided_by: 400 | plus: 1 }} 分钟</span>{% endif %}
+      {% for cat in page.categories %}<a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>{% endfor %}
+    </div>
+    <div class="post-divider"></div>
+  </header>
+
+  {% if page.cover %}
+  <div class="wrap"><div class="post-cover"><img src="{{ page.cover }}" alt="{{ page.title }}"></div></div>
+  {% endif %}
+
+  <div class="wrap">
+    <div class="article markdown-body">
+      {{ content }}
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="post-foot">
+      <div class="copyright-box">
+        本文作者 <strong>{{ site.author }}</strong>，采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 协议，转载请注明出处。<br>
+        原文链接：<a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
+      </div>
+
+      {% if page.previous or page.next %}
+      <nav class="post-nav">
+        {% if page.previous %}<a href="{{ page.previous.url }}" data-ripple><span class="label">← 上一篇</span><span class="t">{{ page.previous.title }}</span></a>{% endif %}
+        {% if page.next %}<a href="{{ page.next.url }}" data-ripple><span class="label">下一篇 →</span><span class="t">{{ page.next.title }}</span></a>{% endif %}
+      </nav>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if page.comments != false %}
+  <div class="comment wrap">
+    {% include comments.html %}
+  </div>
+  {% endif %}
+</article>
