@@ -1,4 +1,6 @@
 /* giscus 自定义主题 · 雾水水墨（夜墨） */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css');
+
 main {
   --color-canvas-default: #161e23;
   --color-canvas-overlay: #1a232a;
@@ -42,9 +44,147 @@ main {
   color-scheme: dark;
   font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
+
+/* === 卡片化（克制 padding + 柔光 hover） === */
+.gsc-timeline { gap: 14px; }
+.gsc-comment { margin-block: 8px; }
+.gsc-comment > .gsc-comment-box {
+  padding: 18px 22px;
+  background: var(--color-canvas-overlay);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 14px;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.gsc-comment > .gsc-comment-box:hover {
+  border-color: var(--color-accent-muted);
+  box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+
+/* === 头像 · 双层细描边，hover 切墨青 === */
+img.gsc-comment-author-avatar,
+img.gsc-direct-reaction-avatar {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-canvas-default), 0 0 0 3px var(--color-border-muted);
+  transition: box-shadow .3s ease;
+}
+img.gsc-comment-author-avatar:hover {
+  box-shadow: 0 0 0 2px var(--color-canvas-default), 0 0 0 3px var(--color-accent-emphasis);
+}
+
+/* === 作者名 + 时间戳 === */
+.gsc-comment-author a {
+  color: var(--color-fg-default);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .25s ease;
+}
+.gsc-comment-author a:hover { color: var(--color-accent-fg); }
+.gsc-comment-author-created-at,
+.gsc-comment-edited-message {
+  color: var(--color-fg-subtle);
+  font-size: 12.5px;
+  text-decoration: none;
+}
+
+/* === 评论正文 · 走霞鹜文楷，跟博客正文一致 === */
+.gsc-comment-content,
+.gsc-comment-content .markdown-body {
+  font-family: "LXGW WenKai Screen", "LXGW WenKai", "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: 15px;
+  line-height: 1.78;
+  color: var(--color-fg-default);
+}
+
+/* === 正文里的链接 · 墨青虚下划线 === */
+.gsc-comment-content a {
+  color: var(--color-accent-fg);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-accent-muted);
+  transition: border-color .2s ease, color .2s ease;
+}
+.gsc-comment-content a:hover {
+  color: var(--color-accent-emphasis);
+  border-bottom-color: var(--color-accent-emphasis);
+  border-bottom-style: solid;
+}
+
+/* === 正文里的代码 / 代码块 === */
+.gsc-comment-content code,
+.gsc-comment-content pre {
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  font-size: 13.5px;
+}
+.gsc-comment-content pre {
+  background: var(--color-canvas-inset);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+/* === 引用块 · 墨青细 ribbon === */
+.gsc-comment-content blockquote {
+  border-left: 3px solid var(--color-accent-muted);
+  background: var(--color-canvas-inset);
+  padding: 10px 14px;
+  color: var(--color-fg-muted);
+  border-radius: 0 8px 8px 0;
+  margin: 12px 0;
+}
+
+/* === 输入区 · 圆角 + 楷书输入 + 墨青 focus ring === */
 .gsc-comment-box { border-radius: 14px; }
 .gsc-comment-box-tabs { border-radius: 14px 14px 0 0; }
-.gsc-comment-box-textarea { border-radius: 10px; }
-.gsc-comment .gsc-comment-content,
-.gsc-comment > .gsc-comment-box { border-radius: 14px; }
+.gsc-comment-box-textarea {
+  border-radius: 10px;
+  font-family: "LXGW WenKai Screen", "LXGW WenKai", "Noto Serif SC", "Songti SC", serif;
+  font-size: 15px;
+  line-height: 1.7;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.gsc-comment-box-textarea:focus,
+.gsc-comment-box-textarea:focus-visible {
+  border-color: var(--color-accent-emphasis) !important;
+  box-shadow: 0 0 0 3px var(--color-accent-subtle) !important;
+  outline: none !important;
+}
+
+/* === 标签页（写 / 预览） === */
+.gsc-comment-box-tabs [role="tab"] {
+  font-weight: 500;
+  transition: color .25s ease, border-color .25s ease, background-color .25s ease;
+}
+.gsc-comment-box-tabs [role="tab"][aria-selected="true"] {
+  color: var(--color-accent-fg) !important;
+  border-bottom-color: var(--color-accent-emphasis) !important;
+}
+
+/* === Emoji 反应 · 克制 hover === */
+.gsc-reactions button,
+.gsc-direct-reaction-buttons button {
+  border-radius: 18px;
+  transition: background-color .2s ease, transform .15s cubic-bezier(.2,.7,.2,1);
+}
+.gsc-reactions button:hover,
+.gsc-direct-reaction-buttons button:hover {
+  background-color: var(--color-accent-subtle) !important;
+  transform: translateY(-1px);
+}
 .gsc-reactions-count { display: none; }
+
+/* === 嵌套回复 · 墨青细线引导 === */
+.gsc-replies {
+  margin-top: 14px;
+  padding-left: 16px;
+  border-left: 2px solid var(--color-border-muted);
+}
+.gsc-reply { margin-block: 6px; }
+.gsc-reply > .gsc-comment-box { padding: 14px 18px; }
+
+/* === 顶部 header / 加载态 === */
+.gsc-header,
+.gsc-loading-image {
+  font-family: -apple-system, "PingFang SC", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+/* === 圆角统一兜底 === */
+.gsc-comment .gsc-comment-content { border-radius: 14px; }
