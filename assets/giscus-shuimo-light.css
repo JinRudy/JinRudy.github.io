@@ -188,3 +188,48 @@ img.gsc-comment-author-avatar:hover {
 
 /* === 圆角统一兜底 === */
 .gsc-comment .gsc-comment-content { border-radius: 14px; }
+
+/* === 空状态收拾(0 评论时不再空荡荡) === */
+/* 1) 隐藏顶部那个浮空的"给文章加 reaction"按钮 */
+.gsc-reactions { display: none; }
+
+/* 2) 评论计数标题加墨青小点装饰 + 字体走 sans */
+.gsc-comments > h3,
+[class*="comments-count"]:not(.gsc-comments-count-info) {
+  position: relative;
+  padding-left: 16px;
+  font-family: -apple-system, "PingFang SC", system-ui, sans-serif;
+}
+.gsc-comments > h3::before,
+[class*="comments-count"]:not(.gsc-comments-count-info)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent-emphasis);
+  border-radius: 50%;
+}
+
+/* 3) 评论列表空了就补一条克制的占位 */
+.gsc-timeline:empty::before {
+  content: '暂无评论 · 来留下第一句吧';
+  display: block;
+  text-align: center;
+  color: var(--color-fg-subtle);
+  font-family: "LXGW WenKai Screen", "LXGW WenKai", "Noto Serif SC", serif;
+  font-size: 14.5px;
+  padding: 16px 0;
+  border-top: 1px dashed var(--color-border-muted);
+  border-bottom: 1px dashed var(--color-border-muted);
+  margin: 6px 0 16px;
+  letter-spacing: 0.5px;
+}
+
+/* 4) 顶部留白收紧 */
+.gsc-main { padding-top: 4px !important; }
+.gsc-comments > :first-child { margin-top: 0 !important; }
+
+/* 5) 隐藏右下角那个多余的 M↓ markdown badge */
+.gsc-comment-box-bottom { display: none; }
