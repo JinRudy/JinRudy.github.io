@@ -231,5 +231,8 @@ img.gsc-comment-author-avatar:hover {
 .gsc-main { padding-top: 4px !important; }
 .gsc-comments > :first-child { margin-top: 0 !important; }
 
-/* 5) 隐藏右下角那个多余的 M↓ markdown badge */
-.gsc-comment-box-bottom { display: none; }
+/* 5) 隐藏右下角那个 M↓ markdown 角标(精准命中，不要碰到登录按钮) */
+.gsc-comment-box-bottom > a[href*="markdown"],
+.gsc-comment-box-bottom > a[aria-label*="Markdown"],
+.gsc-comment-box-bottom > a[aria-label*="markdown"],
+.gsc-comment-box-md-toolbar a[href*="markdown"] { display: none; }
