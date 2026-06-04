@@ -64,7 +64,12 @@
   function syncGiscus(theme) {
     var f = document.querySelector('iframe.giscus-frame');
     if (!f) return;
-    var url = 'https://a.minifog.org.cn/assets/giscus-shuimo-' + (theme === 'dark' ? 'dark' : 'light') + '.css';
+    // 复用 comments.html 里 data-theme 的 ?v=... cache-buster，避免 CDN 缓存住老主题
+    var script = document.querySelector('script[src*="giscus.app/client.js"]');
+    var init = (script && script.dataset.theme) || '';
+    var m = init.match(/[?&]v=([^&]+)/);
+    var v = m ? '?v=' + m[1] : '';
+    var url = 'https://a.minifog.org.cn/assets/giscus-shuimo-' + (theme === 'dark' ? 'dark' : 'light') + '.css' + v;
     f.contentWindow.postMessage({ giscus: { setConfig: { theme: url } } }, 'https://giscus.app');
   }
   function setTheme(next) {
