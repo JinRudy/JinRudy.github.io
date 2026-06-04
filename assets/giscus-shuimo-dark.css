@@ -189,19 +189,18 @@ img.gsc-comment-author-avatar:hover {
 /* === 圆角统一兜底 === */
 .gsc-comment .gsc-comment-content { border-radius: 14px; }
 
-/* === 空状态收拾(0 评论时不再空荡荡) === */
-/* 1) 隐藏顶部那个浮空的"给文章加 reaction"按钮 */
-.gsc-reactions { display: none; }
+/* === 空状态收拾(0 评论时不再空荡荡 + 顶部不再空旷) === */
+/* 1) 隐藏顶部"给文章加 reaction" + 内部那个 0 表情计数 */
+.gsc-reactions { display: none !important; }
 
-/* 2) 评论计数标题加墨青小点装饰 + 字体走 sans */
-.gsc-comments > h3,
-[class*="comments-count"]:not(.gsc-comments-count-info) {
+/* 2) 评论计数标题(实际 tag 是 h4.gsc-comments-count)加墨青小点 + sans 字体 */
+.gsc-comments-count {
   position: relative;
   padding-left: 16px;
+  margin: 0 0 12px !important;
   font-family: -apple-system, "PingFang SC", system-ui, sans-serif;
 }
-.gsc-comments > h3::before,
-[class*="comments-count"]:not(.gsc-comments-count-info)::before {
+.gsc-comments-count::before {
   content: '';
   position: absolute;
   left: 0;
@@ -212,27 +211,13 @@ img.gsc-comment-author-avatar:hover {
   border-radius: 50%;
 }
 
-/* 3) 评论列表空了就补一条克制的占位 */
-.gsc-timeline:empty::before {
-  content: '暂无评论 · 来留下第一句吧';
-  display: block;
-  text-align: center;
-  color: var(--color-fg-subtle);
-  font-family: "LXGW WenKai Screen", "LXGW WenKai", "Noto Serif SC", serif;
-  font-size: 14.5px;
-  padding: 16px 0;
-  border-top: 1px dashed var(--color-border-muted);
-  border-bottom: 1px dashed var(--color-border-muted);
-  margin: 6px 0 16px;
-  letter-spacing: 0.5px;
+/* 3) 顶部留白往死了压 —— .gsc-main 是 flex 容器，gap 收紧 */
+.gsc-main {
+  gap: 12px !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
+.gsc-main > :first-child { margin-top: 0 !important; }
 
-/* 4) 顶部留白收紧 */
-.gsc-main { padding-top: 4px !important; }
-.gsc-comments > :first-child { margin-top: 0 !important; }
-
-/* 5) 隐藏右下角那个 M↓ markdown 角标(精准命中，不要碰到登录按钮) */
-.gsc-comment-box-bottom > a[href*="markdown"],
-.gsc-comment-box-bottom > a[aria-label*="Markdown"],
-.gsc-comment-box-bottom > a[aria-label*="markdown"],
-.gsc-comment-box-md-toolbar a[href*="markdown"] { display: none; }
+/* 4) 精准隐藏右下角 M↓ markdown 帮助链接(class 是 gsc-comment-box-markdown-hint) */
+.gsc-comment-box-markdown-hint { display: none !important; }
