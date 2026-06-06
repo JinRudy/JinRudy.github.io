@@ -162,3 +162,6 @@ google:
         sidebar-detail: false
         content_header: false
         content_footer: false
+
+# 允许未来日期的 post 也参与构建（避免时区/时间错配被跳过）
+future: true

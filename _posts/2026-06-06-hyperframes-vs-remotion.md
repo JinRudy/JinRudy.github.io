@@ -1,6 +1,6 @@
 ---
 title: 想用代码做视频？HyperFrames 和 Remotion 选哪个 —— 一份手感对比
-date: 2026-06-06 14:30:00 +0800
+date: 2026-06-06 09:00:00 +0800
 author: 雾水
 tags: [前端, 视频, 动画, 工具, 思考]
 category: 折腾
