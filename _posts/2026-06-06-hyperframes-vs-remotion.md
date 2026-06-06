@@ -47,6 +47,7 @@ comments: true
 
 **Remotion 写法**（一切都是 React + 数学函数）：
 
+{% raw %}
 ```jsx
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 
@@ -63,6 +64,7 @@ export const Title = () => {
   );
 };
 ```
+{% endraw %}
 
 **HyperFrames 写法**（GSAP adapter 版本）：
 
