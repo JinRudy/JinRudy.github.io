@@ -3,7 +3,8 @@ title: 想用代码做视频？HyperFrames 和 Remotion 选哪个 —— 一份�
 date: 2026-06-06 09:00:00 +0800
 author: 雾水
 tags: [前端, 视频, 动画, 工具, 思考]
-category: 折腾
+categories: 折腾
+cover: https://placehold.co/1200x600/2f7068/f5f4ef.png?text=HyperFrames+%C3%97+Remotion
 description: HyperFrames 和 Remotion 都是「代码做视频」的方案，但定位差别其实挺大。这篇结合自有素材接入、分镜设计、动画实现的实战，把两者的手感讲透，并给出我自己的选型决策树。
 comments: true
 ---
